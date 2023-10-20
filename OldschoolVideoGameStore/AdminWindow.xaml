@@ -1,0 +1,56 @@
+﻿<Window x:Class="OldschoolVideoGameStore.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OldschoolVideoGameStore"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"  Background="#4B0FA5">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--ELEMENTS-->
+
+        <ListView Name="lstMovieLibrary" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" BorderBrush="#4B0FA5"/>
+        <ListView Name="lstGameLibrary" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" BorderBrush="#4B0FA5"/>
+
+        <ComboBox Name="cbMovieLibrary" Grid.Column="3" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
+        <ComboBox Name="cbGameLibrary" Grid.Column="6" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
+
+        <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Content="Welcome Admin!" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Heavy"/>
+        <Label Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Content="Admin View" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
+        <Label Grid.Column="2" Grid.Row="3" Content="Movie Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
+        <Label Grid.Column="5" Grid.Row="3" Content="Game Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
+
+        <Button Name="btnRentMovie" Grid.Column="2" Grid.Row="11" Height="30" Width="90" HorizontalAlignment="Left" Content="Remove Movie" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
+        <Button Name="btnRentGame" Grid.Column="5" Grid.Row="11" Height="30" Width="90" HorizontalAlignment="Left" Content="Remove Game" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
+        <Button Name="btnLogOut" Grid.Column="6" Grid.Row="1" Height="30" Width="60" HorizontalAlignment="Right" Content="Log Out" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnLogOut_Click"/>
+        <Button Name="btnAddMedia" Grid.Column="6" Grid.Row="11" Height="30" Width="80" HorizontalAlignment="Right" Content="Add Media" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnAddMedia_Click"/>
+
+    </Grid>
+</Window>

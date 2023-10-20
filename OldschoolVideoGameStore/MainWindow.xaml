@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldschoolVideoGameStore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Background="#4B0FA5">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"  Background="#4B0FA5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -40,8 +40,8 @@
         
         <!--TODO: Fix color of Register-->
         
-        <ListBox Name="txtUsername" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Height="30" Width="260"/>
-        <PasswordBox Name="txtPassword" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Height="30" Width="260"/>
+        <TextBox Name="txtUsername" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Height="30" Width="260"/>
+        <PasswordBox Name="txtPassword" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Height="30" Width="260"/>
         <TextBlock Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">  
                  <Hyperlink Click="btnRegister_Click" FontStyle="Normal">Create a new user</Hyperlink>
         </TextBlock>
@@ -49,5 +49,6 @@
         <CheckBox Name="cbxAdminLogin" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Log in as Admin" Foreground="#FCFEFD"/>
 
         <Button Name="btnLogin" Grid.Column="2" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="30" Width="80" Content="Log in" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnLogin_Click"/>
+        <Button Name="btnExit" Grid.Column="5" Grid.Row="0" Content="x" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#340b4f" Foreground="#FCFEFD" Click="btnExit_Click"/>
     </Grid>
 </Window>

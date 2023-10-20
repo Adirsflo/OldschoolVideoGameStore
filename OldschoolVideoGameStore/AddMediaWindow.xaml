@@ -1,0 +1,63 @@
+﻿<Window x:Class="OldschoolVideoGameStore.AddMediaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OldschoolVideoGameStore"
+        mc:Ignorable="d"
+        Title="AddMediaWindow" Height="550" Width="500" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"  Background="#4B0FA5">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <!--ELEMENTS-->
+
+        <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="8" Background="#641892" CornerRadius="30" Margin="0 0 0 -15"/>
+
+        <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="4" Content="Add Media" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Heavy"/>
+        <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Content="Media Type" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+        <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Content="Title" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+        <Label Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Content="Year" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+        <Label Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Content="Genre" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+        <Label Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Content="R-Rated?" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+        <Label Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2" Content="Bio" Margin="0 0 50 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
+
+        <TextBox Name="txtNewTitle" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="25 10 25 10"/>
+        <TextBox Name="txtNewYear" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="25 10 25 10"/>
+        <TextBox Name="txtNewBio" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="25 10 25 10"/>
+
+        <ComboBox Name="cbMediaType" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="25 10 25 10"/>
+        <ComboBox Name="cbNewGenre"  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="25 10 25 10"/>
+
+        <CheckBox Name="bxIsRRated" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Center" Content="Yes" Margin="28 10 86 10" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+        <CheckBox Name="bxIsNotRRated" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Center" Content="No" Margin="0 10 110 10" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+
+        <Button Name="btnAdd" Grid.Column="5" Grid.Row="10" Height="30" Width="70" VerticalAlignment="Bottom" Content="Add" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
+        <Button Name="btnCancel" Grid.Column="4" Grid.Row="10" Height="30" Width="70" VerticalAlignment="Bottom" Content="Cancel" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnCancel_Click"/>
+
+
+    </Grid>
+</Window>
