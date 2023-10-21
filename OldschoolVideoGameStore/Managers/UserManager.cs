@@ -8,6 +8,7 @@ namespace OldschoolVideoGameStore.Managers
         public static List<IUser> userList = new()
         {
             new Admin("Rida", "Abdal", "admin", "password"),
+            new Customer("123", "123", "Adir", "Abdal", 21)
         };
     }
 }

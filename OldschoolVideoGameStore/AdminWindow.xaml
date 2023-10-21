@@ -42,7 +42,7 @@
         <ComboBox Name="cbMovieLibrary" Grid.Column="3" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
         <ComboBox Name="cbGameLibrary" Grid.Column="6" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
 
-        <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Content="Welcome Admin!" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Heavy"/>
+        <Label Name="lblWelcome" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Content="Welcome " HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Heavy"/>
         <Label Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Content="Admin View" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
         <Label Grid.Column="2" Grid.Row="3" Content="Movie Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
         <Label Grid.Column="5" Grid.Row="3" Content="Game Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>

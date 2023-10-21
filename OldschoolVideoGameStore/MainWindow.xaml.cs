@@ -20,15 +20,18 @@ namespace OldschoolVideoGameStore
         }
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (cbxAdminLogin.IsChecked == true)
+            if (cbxAdminLogin.IsChecked == true) // Inloggning för Admin
             {
                 foreach (var admin in UserManager.userList)
                 {
                     if (txtUsername.Text.ToLower() == admin.Username && txtPassword.Password.ToLower() == admin.Password)
                     {
-                        AdminWindow adminWindow = new();
+                        string adminUsername = admin.Username;
+
+                        AdminWindow adminWindow = new(adminUsername);
                         adminWindow.Show();
                         Close();
+                        break;
                     }
                     else
                     {
@@ -36,7 +39,7 @@ namespace OldschoolVideoGameStore
                     }
                 }
             }
-            else
+            else // Inloggning för Customer
             {
                 if (UserManager.userList.Count == 1)
                 {
@@ -47,9 +50,10 @@ namespace OldschoolVideoGameStore
                     bool isSameInput = true;
                     foreach (var user in UserManager.userList)
                     {
-                        if (txtUsername.Text.ToLower() == user.Username && txtPassword.Password.ToLower() == user.Password)
+                        if (txtUsername.Text.ToLower() == user.Username && txtPassword.Password.ToLower() == user.Password && txtUsername.Text.ToLower() != "admin")
                         {
-                            CostumerWindow costumerWindow = new();
+                            string costumerUsername = user.Username;
+                            CostumerWindow costumerWindow = new(costumerUsername);
                             costumerWindow.Show();
                             Close();
                             isSameInput = false;

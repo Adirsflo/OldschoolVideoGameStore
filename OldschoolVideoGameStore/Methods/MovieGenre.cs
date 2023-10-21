@@ -6,6 +6,7 @@
         {
             Action,
             Comedy,
+            Mystery,
             Drama,
             ScienceFiction,
             Fantasy,

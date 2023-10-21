@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using OldschoolVideoGameStore.Managers;
+using System.Windows;
 
 namespace OldschoolVideoGameStore
 {
@@ -7,14 +8,26 @@ namespace OldschoolVideoGameStore
     /// </summary>
     public partial class AdminWindow : Window
     {
-        public AdminWindow()
+        string adminUsername;
+        public AdminWindow(string adminUsername)
         {
             InitializeComponent();
+            this.adminUsername = adminUsername;
+
+            // Jag vill Koppla samman användarnamnet till någon från listan
+
+            foreach (var admin in UserManager.userList)
+            {
+                if (admin.Username == adminUsername)
+                {
+                    lblWelcome.Content += admin.FullName + "!";
+                }
+            }
         }
 
         private void btnAddMedia_Click(object sender, RoutedEventArgs e)
         {
-            AddMediaWindow addMediaWindow = new();
+            AddMediaWindow addMediaWindow = new(adminUsername);
             addMediaWindow.Show();
             Close();
         }

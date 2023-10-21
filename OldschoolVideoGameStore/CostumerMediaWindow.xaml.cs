@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using OldschoolVideoGameStore.Managers;
+using System.Windows;
 
 namespace OldschoolVideoGameStore
 {
@@ -7,21 +8,32 @@ namespace OldschoolVideoGameStore
     /// </summary>
     public partial class CostumerMediaWindow : Window
     {
-        public CostumerMediaWindow()
+        string costumerUsername;
+        public CostumerMediaWindow(string costumerUsername)
         {
             InitializeComponent();
+            this.costumerUsername = costumerUsername;
+
+
+            foreach (var costumer in UserManager.userList)
+            {
+                if (costumerUsername == costumer.Username)
+                {
+                    lblDisplayName.Content = costumer.FullName;
+                }
+            }
         }
 
         private void blkLibrary_Click(object sender, RoutedEventArgs e)
         {
-            CostumerWindow costumerWindow = new();
+            CostumerWindow costumerWindow = new(costumerUsername);
             costumerWindow.Show();
             Close();
         }
 
         private void btnRateMedia_Click(object sender, RoutedEventArgs e)
         {
-            ReviewWindow reviewWindow = new();
+            ReviewWindow reviewWindow = new(costumerUsername);
             reviewWindow.Show();
             Close();
         }

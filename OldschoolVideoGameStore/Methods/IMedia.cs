@@ -3,7 +3,8 @@
     public interface IMedia
     {
         public string Name { get; set; }
-        public int Rating { get; set; }
+        public int Year { get; set; }
+        public double Rating { get; set; }
         public int NumRatings { get; set; }
         public string Genre { get; set; }
         public Customer Renter { get; set; }

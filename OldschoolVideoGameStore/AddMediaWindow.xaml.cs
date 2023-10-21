@@ -7,14 +7,16 @@ namespace OldschoolVideoGameStore
     /// </summary>
     public partial class AddMediaWindow : Window
     {
-        public AddMediaWindow()
+        string adminUsername;
+        public AddMediaWindow(string adminUsername)
         {
+            this.adminUsername = adminUsername;
             InitializeComponent();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            AdminWindow adminWindow = new();
+            AdminWindow adminWindow = new(adminUsername);
             adminWindow.Show();
             Close();
 
