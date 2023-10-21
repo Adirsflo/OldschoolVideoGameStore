@@ -48,15 +48,15 @@
         <Label Grid.Column="6" Grid.Row="4" Content="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Narkisim" FontWeight="DemiBold" Foreground="#FCFEFD" FontSize="15"/>
 
 
-        <CheckBox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <CheckBox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <CheckBox Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <CheckBox Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <CheckBox Grid.Column="6" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox Name="bxRate1" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="bxRate_Checked" Unchecked="bxRate_Unchecked"/>
+        <CheckBox Name="bxRate2" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="bxRate_Checked" Unchecked="bxRate_Unchecked"/>
+        <CheckBox Name="bxRate3" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="bxRate_Checked" Unchecked="bxRate_Unchecked"/>
+        <CheckBox Name="bxRate4" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="bxRate_Checked" Unchecked="bxRate_Unchecked"/>
+        <CheckBox Name="bxRate5" Grid.Column="6" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="bxRate_Checked" Unchecked="bxRate_Unchecked"/>
 
-        <TextBox Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox Name="txtReview" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" />
 
-        <Button Name="btnAdd" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Height="30" Width="70" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Content="Submit" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+        <Button Name="btnSubmit" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Height="30" Width="70" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Content="Submit" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD" Click="btnSubmit_Click"/>
         <Button Name="btnCancel" Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Margin="30 0 0 0" Height="30" Width="70" VerticalAlignment="Bottom" Content="Cancel" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD" Click="btnCancel_Click"/>
 
 

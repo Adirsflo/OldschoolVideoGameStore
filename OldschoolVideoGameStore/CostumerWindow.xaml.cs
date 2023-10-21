@@ -23,6 +23,7 @@ namespace OldschoolVideoGameStore
         {
             lstGameLibrary.Items.Clear();
             lstMovieLibrary.Items.Clear();
+            lblWelcome.Content = "Welcome ";
 
             // Uppdaterar Titelsida
             foreach (var costumer in UserManager.userList)
@@ -53,7 +54,7 @@ namespace OldschoolVideoGameStore
 
                     lstMovieLibrary.Items.Add(movieItem);
                 }
-                else if (media.GetType() == typeof(Movie))
+                else if (media.GetType() == typeof(Game))
                 {
                     ListViewItem gameItem = new();
                     gameItem.Content = new
@@ -63,8 +64,9 @@ namespace OldschoolVideoGameStore
                         Genre = media.Genre,
                         isRRated = media.IsRRated,
                         Rating = media.Rating,
-                        isAvailable = !media.IsRentedOut
+                        isAvailable = !media.IsRentedOut,
                     };
+
 
                     gameItem.Tag = media;
                     lstGameLibrary.Items.Add(gameItem);
@@ -120,7 +122,7 @@ namespace OldschoolVideoGameStore
                 Movie selectedMovie = (Movie)selectedMovieItem.Tag;
                 if (selectedMovie.IsRentedOut == false)
                 {
-                    RentGame(selectedMovie);
+                    RentMovie(selectedMovie);
 
                     MessageBox.Show("Movie added to My Media!", "Movie rented");
 
@@ -140,8 +142,7 @@ namespace OldschoolVideoGameStore
             // Ändra från available till unavailable på filmen
             foreach (var game in MediaManager.mediaList)
             {
-                ShowDialog'-'
-                if (game == selectedGame)
+                if (game == selectedMovie)
                 {
                     foreach (var user in UserManager.userList)
                     {
@@ -162,7 +163,7 @@ namespace OldschoolVideoGameStore
 
             if (selectedGameItem != null)
             {
-                Movie selectedGame = (Movie)selectedGameItem.Tag;
+                Game selectedGame = (Game)selectedGameItem.Tag;
                 if (selectedGame.IsRentedOut == false)
                 {
                     RentGame(selectedGame);
@@ -180,7 +181,7 @@ namespace OldschoolVideoGameStore
             }
         }
 
-        public void RentGame(Movie selectedGame)
+        public void RentGame(Game selectedGame)
         {
             // Ändra från available till unavailable på spelet
             foreach (var game in MediaManager.mediaList)
