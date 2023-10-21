@@ -56,8 +56,8 @@
 
         <TextBox Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
 
-        <Button Name="btnAdd" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Height="30" Width="70" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Content="Submit" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
-        <Button Name="btnCancel" Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Margin="30 0 0 0" Height="30" Width="70" VerticalAlignment="Bottom" Content="Cancel" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnCancel_Click"/>
+        <Button Name="btnAdd" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Height="30" Width="70" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Content="Submit" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+        <Button Name="btnCancel" Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Margin="30 0 0 0" Height="30" Width="70" VerticalAlignment="Bottom" Content="Cancel" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD" Click="btnCancel_Click"/>
 
 
     </Grid>

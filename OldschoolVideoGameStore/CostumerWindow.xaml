@@ -36,8 +36,8 @@
 
         <!--ELEMENTS-->
 
-        <ListView Name="lstMovieLibrary" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" BorderBrush="#4B0FA5"/>
-        <ListView Name="lstGameLibrary" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" BorderBrush="#4B0FA5"/>
+        <ListView Name="lstMovieLibrary" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" FontFamily="Narkisim" BorderBrush="#4B0FA5"/>
+        <ListView Name="lstGameLibrary" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#641892" FontFamily="Narkisim" BorderBrush="#4B0FA5"/>
 
         <ComboBox Name="cbMovieLibrary" Grid.Column="3" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
         <ComboBox Name="cbGameLibrary" Grid.Column="6" Grid.Row="3" Height="20" Width="100" Margin="0 10 0 0" HorizontalAlignment="Right"/>
@@ -47,7 +47,7 @@
         <Label Grid.Column="2" Grid.Row="3" Content="Movie Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
         <Label Grid.Column="5" Grid.Row="3" Content="Game Library" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11" FontFamily="Narkisim" Foreground="#FCFEFD" FontWeight="Bold"/>
 
-        <TextBlock Name="blkMyMedia" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45 12 45 0" >
+        <TextBlock Name="blkMyMedia" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Narkisim" Margin="45 12 45 0" >
             <Hyperlink Click="blkMyMedia_Click">
                 <Hyperlink.Style>
                     <Style TargetType="Hyperlink"
@@ -59,9 +59,9 @@
             </Hyperlink>
         </TextBlock>
 
-        <Button Name="btnRentMovie" Grid.Column="3" Grid.Row="11" Height="30" Width="80" HorizontalAlignment="Right" Content="Rent Movie" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
-        <Button Name="btnRentGame" Grid.Column="6" Grid.Row="11" Height="30" Width="80" HorizontalAlignment="Right" Content="Rent Game" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD"/>
-        <Button Name="btnLogOut" Grid.Column="6" Grid.Row="1" Height="30" Width="60" HorizontalAlignment="Right" Content="Log Out" BorderBrush="#641892" Background="#771fcb" Foreground="#FCFEFD" Click="btnLogOut_Click"/>
+        <Button Name="btnRentMovie" Grid.Column="3" Grid.Row="11" Height="30" Width="80" HorizontalAlignment="Right" Content="Rent Movie" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+        <Button Name="btnRentGame" Grid.Column="6" Grid.Row="11" Height="30" Width="80" HorizontalAlignment="Right" Content="Rent Game" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD"/>
+        <Button Name="btnLogOut" Grid.Column="6" Grid.Row="1" Height="30" Width="60" HorizontalAlignment="Right" Content="Log Out" BorderBrush="#641892" Background="#771fcb" FontFamily="Narkisim" Foreground="#FCFEFD" Click="btnLogOut_Click"/>
 
     </Grid>
 </Window>

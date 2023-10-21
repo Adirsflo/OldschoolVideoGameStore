@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using OldschoolVideoGameStore.Methods;
+using System.Windows;
 
 namespace OldschoolVideoGameStore
 {
@@ -7,6 +8,7 @@ namespace OldschoolVideoGameStore
     /// </summary>
     public partial class MainWindow : Window
     {
+        Admin admin;
         public MainWindow()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace OldschoolVideoGameStore
         {
             if (cbxAdminLogin.IsChecked == true)
             {
-                if (txtUsername.Text == "admin" && txtPassword.Password == "password")
+                if (txtUsername.Text == admin.Username.ToString() && txtPassword.Password == admin.Password.ToString())
                 {
                     AdminWindow adminWindow = new();
                     adminWindow.Show();
