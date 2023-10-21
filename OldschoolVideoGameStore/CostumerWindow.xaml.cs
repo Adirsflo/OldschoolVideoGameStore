@@ -49,11 +49,11 @@ namespace OldschoolVideoGameStore
                         Rating = media.Rating,
                         isAvailable = !media.IsRentedOut
                     };
-                    movieItem.Tag = MediaManager.mediaList;
+                    movieItem.Tag = media;
 
                     lstMovieLibrary.Items.Add(movieItem);
                 }
-                else if (media.GetType() == typeof(Game))
+                else if (media.GetType() == typeof(Movie))
                 {
                     ListViewItem gameItem = new();
                     gameItem.Content = new
@@ -66,6 +66,7 @@ namespace OldschoolVideoGameStore
                         isAvailable = !media.IsRentedOut
                     };
 
+                    gameItem.Tag = media;
                     lstGameLibrary.Items.Add(gameItem);
                 }
             }
@@ -112,22 +113,61 @@ namespace OldschoolVideoGameStore
 
         private void btnRentMovie_Click(object sender, RoutedEventArgs e)
         {
+            ListBoxItem selectedMovieItem = (ListBoxItem)lstMovieLibrary.SelectedItem;
 
+            if (selectedMovieItem != null)
+            {
+                Movie selectedMovie = (Movie)selectedMovieItem.Tag;
+                if (selectedMovie.IsRentedOut == false)
+                {
+                    RentGame(selectedMovie);
+
+                    MessageBox.Show("Movie added to My Media!", "Movie rented");
+
+                    UpdateUi();
+
+                    // Lägg till spelet hos användaren
+                }
+                else
+                {
+                    MessageBox.Show("This movie is not available", "Out of stock");
+                }
+            }
+        }
+
+        public void RentMovie(Movie selectedMovie)
+        {
+            // Ändra från available till unavailable på filmen
+            foreach (var game in MediaManager.mediaList)
+            {
+                ShowDialog'-'
+                if (game == selectedGame)
+                {
+                    foreach (var user in UserManager.userList)
+                    {
+                        if (user.Username == costumerUsername)
+                        {
+                            Customer userGame = (Customer)user;
+                            game.Renter = userGame;
+                            game.IsRentedOut = true;
+                        }
+                    }
+                }
+            }
         }
 
         private void btnRentGame_Click(object sender, RoutedEventArgs e)
         {
             ListBoxItem selectedGameItem = (ListBoxItem)lstGameLibrary.SelectedItem;
-            Game selectedGame = (Game)selectedGameItem.Tag;
-            ListViewItem userItem = new();
 
-            if (selectedGame != null)
+            if (selectedGameItem != null)
             {
+                Movie selectedGame = (Movie)selectedGameItem.Tag;
                 if (selectedGame.IsRentedOut == false)
                 {
                     RentGame(selectedGame);
 
-                    MessageBox.Show("Game rented!");
+                    MessageBox.Show("Game added to My Media!", "Game rented");
 
                     UpdateUi();
 
@@ -140,7 +180,7 @@ namespace OldschoolVideoGameStore
             }
         }
 
-        public void RentGame(Game selectedGame)
+        public void RentGame(Movie selectedGame)
         {
             // Ändra från available till unavailable på spelet
             foreach (var game in MediaManager.mediaList)
@@ -153,6 +193,7 @@ namespace OldschoolVideoGameStore
                         {
                             Customer userGame = (Customer)user;
                             game.Renter = userGame;
+                            game.IsRentedOut = true;
                         }
                     }
                 }

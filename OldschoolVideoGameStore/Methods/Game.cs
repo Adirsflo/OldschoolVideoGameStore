@@ -1,6 +1,6 @@
 ﻿namespace OldschoolVideoGameStore.Methods
 {
-    public class Game : GamesGenre, IMedia
+    public class Movie : GamesGenre, IMedia
     {
         public string Name { get; set; }
         public int Year { get; set; }
@@ -13,7 +13,7 @@
         public string Bio { get; set; }
 
 
-        public Game(string name, int year, double rating, int numRatings, string genre, Customer renter, bool isRentedOut, bool isRRated, string bio)
+        public Movie(string name, int year, double rating, int numRatings, string genre, Customer renter, bool isRentedOut, bool isRRated, string bio)
         {
             Name = name;
             Year = year;
