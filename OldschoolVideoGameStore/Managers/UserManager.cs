@@ -1,12 +1,13 @@
-﻿using System;
+﻿using OldschoolVideoGameStore.Methods;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OldschoolVideoGameStore.Managers
 {
-    internal class UserManager
+    public static class UserManager
     {
+        public static List<IUser> userList = new()
+        {
+            new Admin("Rida", "Abdal", "admin", "password"),
+        };
     }
 }

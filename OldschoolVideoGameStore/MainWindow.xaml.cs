@@ -1,14 +1,12 @@
-﻿using OldschoolVideoGameStore.Methods;
+﻿using OldschoolVideoGameStore.Managers;
+using OldschoolVideoGameStore.Methods;
 using System.Windows;
 
 namespace OldschoolVideoGameStore
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        Admin admin;
+        Admin _admin;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,28 +22,43 @@ namespace OldschoolVideoGameStore
         {
             if (cbxAdminLogin.IsChecked == true)
             {
-                if (txtUsername.Text == admin.Username.ToString() && txtPassword.Password == admin.Password.ToString())
+                foreach (var admin in UserManager.userList)
                 {
-                    AdminWindow adminWindow = new();
-                    adminWindow.Show();
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong username or password!", "Invalid login");
+                    if (txtUsername.Text.ToLower() == admin.Username && txtPassword.Password.ToLower() == admin.Password)
+                    {
+                        AdminWindow adminWindow = new();
+                        adminWindow.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong username or password!", "Invalid login");
+                    }
                 }
             }
             else
             {
-                if (txtUsername.Text == "username" && txtPassword.Password == "password")
+                if (UserManager.userList.Count == 1)
                 {
-                    CostumerWindow costumerWindow = new();
-                    costumerWindow.Show();
-                    Close();
+                    MessageBox.Show("There are no registered accounts at this moment.\nCreate an account to rent movies/games", "Warning");
                 }
                 else
                 {
-                    MessageBox.Show("Wrong username or password!", "Invalid login");
+                    bool isSameInput = true;
+                    foreach (var user in UserManager.userList)
+                    {
+                        if (txtUsername.Text.ToLower() == user.Username && txtPassword.Password.ToLower() == user.Password)
+                        {
+                            CostumerWindow costumerWindow = new();
+                            costumerWindow.Show();
+                            Close();
+                            isSameInput = false;
+                        }
+                    }
+                    if (isSameInput)
+                    {
+                        MessageBox.Show("Wrong username or password!", "Invalid login");
+                    }
                 }
             }
         }
