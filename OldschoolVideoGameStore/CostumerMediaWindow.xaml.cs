@@ -16,15 +16,6 @@ namespace OldschoolVideoGameStore
             InitializeComponent();
             this.costumerUsername = costumerUsername;
 
-
-            //foreach (var costumer in UserManager.userList)
-            //{
-            //    if (costumerUsername == costumer.Username)
-            //    {
-            //        lblDisplayName.Content = costumer.FullName;
-            //    }
-            //}
-
             UpdateUi();
         }
 
@@ -42,10 +33,6 @@ namespace OldschoolVideoGameStore
             }
 
             // Uppdaterar biblioteket
-
-            // TODO: Du ska samla all media som är på ditt namn, i en lista. Du behöver se ifall Renter är på användarens namn
-            // Ifall det är de så ska den in i listan och taggas
-
             foreach (var media in MediaManager.mediaList)
             {
                 ListViewItem item = new();
@@ -92,7 +79,6 @@ namespace OldschoolVideoGameStore
                 reviewWindow.Show();
                 Close();
             }
-
         }
 
         private void btnLogOut_Click(object sender, RoutedEventArgs e)
@@ -136,12 +122,36 @@ namespace OldschoolVideoGameStore
                     lblMediaType.Visibility = Visibility.Visible;
                     lblMediaType.Content = "Movie";
                 }
-
-
             }
+        }
 
+        private void btnReturnMedia_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem selectedItem = (ListBoxItem)lstMyMedia.SelectedItem;
 
+            if (selectedItem != null)
+            {
+                IMedia selectedMedia = (IMedia)selectedItem.Tag;
+                var mediaType = (object)selectedMedia;
 
+                selectedMedia.Renter = null;
+                selectedMedia.IsRentedOut = false;
+
+                UpdateUi();
+
+                lblTitle.Visibility = Visibility.Hidden;
+                lblMediaType.Visibility = Visibility.Hidden;
+
+                MessageBox.Show($"Thank you for returning the {mediaType.GetType().Name}!", "Book returned");
+                MessageBoxResult result = MessageBox.Show("Would you like to leave a review?", "Leave a review", MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    ReviewWindow reviewWindow = new(selectedMedia, costumerUsername);
+                    reviewWindow.Show();
+                    Close();
+                }
+            }
         }
     }
 }
